@@ -21,6 +21,7 @@ function App() {
                     <Route path="/" element={auth ? <Index /> : <Login />} />
                 </Routes>
             </UserContext.Provider>
+
         </div>
     );
 }
