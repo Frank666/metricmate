@@ -14,23 +14,32 @@ on:
       - dev
       - stage
 
-steps:
-- powershell: |
-    New-Item -Path $(System.DefaultWorkingDirectory) -Name "env.json" -Force -Value @'
-    {
-    "REACT_APP_SOMW_KEY": "$(REACT_APP_SOMW_KEY)",
-    }
-    '@
-    Get-Content -Path $(System.DefaultWorkingDirectory)\env.json
-    Get-ChildItem -Path $(System.DefaultWorkingDirectory)
-  displayName: 'Create "env.json" file'
+# steps:
+# - powershell: |
+#     New-Item -Path $(System.DefaultWorkingDirectory) -Name "env.json" -Force -Value @'
+#     {
+#     "REACT_APP_SOMW_KEY": "$(REACT_APP_SOMW_KEY)",
+#     }
+#     '@
+#     Get-Content -Path $(System.DefaultWorkingDirectory)\env.json
+#     Get-ChildItem -Path $(System.DefaultWorkingDirectory)
+#   displayName: 'Create "env.json" file'
 
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
-    steps:      
+    steps:
+      - powershell: |
+          New-Item -Path $(System.DefaultWorkingDirectory) -Name "env.json" -Force -Value @'
+          {
+          "REACT_APP_SOMW_KEY": "$(REACT_APP_SOMW_KEY)",
+          }
+          '@
+          Get-Content -Path $(System.DefaultWorkingDirectory)\env.json
+          Get-ChildItem -Path $(System.DefaultWorkingDirectory)
+        displayName: 'Create "env.json" file'
       - uses: actions/checkout@v2
         with:
           submodules: true
