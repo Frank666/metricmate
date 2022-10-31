@@ -26,8 +26,8 @@ on:
 #   displayName: 'Create "env.json" file'
 
 env:
-  REACT_APP_API_KEY: ${{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}}
-  REACT_APP_API_ENV: ${{prod}}
+  REACT_APP_API_KEY: ${{secrets.REACT_APP_API_KEY}}
+  REACT_APP_API_ENV: ${{secrets.REACT_APP_API_ENV}}
 
 #   // base API url
 # REACT_APP_API_URL=https://metricmate-api-dev.azurewebsites.net
