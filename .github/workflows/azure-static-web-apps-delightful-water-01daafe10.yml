@@ -27,6 +27,7 @@ on:
 
 env:
   REACT_APP_API_KEY: ${{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}}
+  REACT_APP_API_ENV: ${{prod}}
 
 #   // base API url
 # REACT_APP_API_URL=https://metricmate-api-dev.azurewebsites.net
@@ -41,14 +42,7 @@ env:
 # REACT_APP_API_FIREBASE_SENDER_ID=559661309646
 # REACT_APP_API_FIREBASE_APP_ID=1:559661309646:web:83d5fbb27d483a872e3a9f
 # REACT_APP_API_FIREBASE_MEASUREMENT_ID=G-24LVR5TX8P
-# REACT_APP_API_ENV=prod
 
-task: PowerShell@2
-      inputs:
-        targetType: 'inline'
-        script: |
-        #avoid using single quotes while you set the values in a file  
-          new-item -itemtype file -path $(Build.SourcesDirectory) -name ".env" -force -value $NEXT_PUBLIC_API_URL
 
 jobs:
   build_and_deploy_job:
