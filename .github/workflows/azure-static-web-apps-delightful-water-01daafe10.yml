@@ -14,20 +14,6 @@ on:
       - dev
       - stage
 
-env:
-  REACT_APP_API_KEY: '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'
-  REACT_APP_API_URL: 'https://metricmate-api-dev.azurewebsites.net'
-  REACT_APP_API_BASE_URL: '/metricmate/mm-webapi/v0'
-  REACT_APP_API_KEY_FIREBASE_: ${{secrets.REACT_APP_API_KEY_FIREBASE_}}
-  REACT_APP_API_FIREBASE_DOMAIN: ${{secrets.REACT_APP_API_FIREBASE_DOMAIN}}
-  REACT_APP_API_FIREBASE_DB_URL: ${{secrets.REACT_APP_API_FIREBASE_DB_URL}}
-  REACT_APP_API_FIREBASE_PROJECT_ID: ${{secrets.REACT_APP_API_FIREBASE_PROJECT_ID}}
-  REACT_APP_API_FIREBASE_STORE_BUCKET: ${{secrets.REACT_APP_API_FIREBASE_STORE_BUCKET}}
-  REACT_APP_API_FIREBASE_SENDER_ID: ${{secrets.REACT_APP_API_FIREBASE_SENDER_ID}}
-  REACT_APP_API_FIREBASE_APP_ID: ${{secrets.REACT_APP_API_FIREBASE_APP_ID}}
-  REACT_APP_API_FIREBASE_MEASUREMENT_ID: ${{secrets.REACT_APP_API_FIREBASE_MEASUREMENT_ID}}
-  REACT_APP_API_ENV: ${{secrets.REACT_APP_API_ENV}}
-
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
