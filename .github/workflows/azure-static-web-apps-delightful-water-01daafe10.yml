@@ -14,7 +14,7 @@ on:
       - dev
       - stage
 
-powershell: |
+- powershell: |
   New-Item -Path $(System.DefaultWorkingDirectory) -Name "env.json" -Force -Value @'
   {
   "REACT_APP_SOMW_KEY": "$(REACT_APP_SOMW_KEY)",
