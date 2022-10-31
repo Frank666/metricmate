@@ -14,21 +14,10 @@ on:
       - dev
       - stage
 
-# steps:
-# - powershell: |
-#     New-Item -Path $(System.DefaultWorkingDirectory) -Name "env.json" -Force -Value @'
-#     {
-#     "REACT_APP_SOMW_KEY": "$(REACT_APP_SOMW_KEY)",
-#     }
-#     '@
-#     Get-Content -Path $(System.DefaultWorkingDirectory)\env.json
-#     Get-ChildItem -Path $(System.DefaultWorkingDirectory)
-#   displayName: 'Create "env.json" file'
-
 env:
-  REACT_APP_API_KEY: ${{secrets.REACT_APP_API_KEY}}
-  REACT_APP_API_URL: ${{secrets.REACT_APP_API_URL}}
-  REACT_APP_API_BASE_URL: ${{secrets.REACT_APP_API_BASE_URL}}
+  REACT_APP_API_KEY: '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'
+  REACT_APP_API_URL: 'https://metricmate-api-dev.azurewebsites.net'
+  REACT_APP_API_BASE_URL: '=/metricmate/mm-webapi/v0'
   REACT_APP_API_KEY_FIREBASE_: ${{secrets.REACT_APP_API_KEY_FIREBASE_}}
   REACT_APP_API_FIREBASE_DOMAIN: ${{secrets.REACT_APP_API_FIREBASE_DOMAIN}}
   REACT_APP_API_FIREBASE_DB_URL: ${{secrets.REACT_APP_API_FIREBASE_DB_URL}}
