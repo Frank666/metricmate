@@ -21,13 +21,13 @@ jobs:
     name: Build and Deploy Job
     steps:
       - powershell: |
-        New-Item -Path $(System.DefaultWorkingDirectory) -Name "env.json" -Force -Value @'
-        {
-        "REACT_APP_SOMW_KEY": "$(REACT_APP_SOMW_KEY)",
-        }
-        '@
-        Get-Content -Path $(System.DefaultWorkingDirectory)\env.json
-        Get-ChildItem -Path $(System.DefaultWorkingDirectory)
+          New-Item -Path $(System.DefaultWorkingDirectory) -Name "env.json" -Force -Value @'
+          {
+          "REACT_APP_SOMW_KEY": "$(REACT_APP_SOMW_KEY)",
+          }
+          '@
+          Get-Content -Path $(System.DefaultWorkingDirectory)\env.json
+          Get-ChildItem -Path $(System.DefaultWorkingDirectory)
         displayName: 'Create "env.json" file'
       - uses: actions/checkout@v2
         with:
