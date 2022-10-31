@@ -17,7 +17,7 @@ on:
 env:
   REACT_APP_API_KEY: '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'
   REACT_APP_API_URL: 'https://metricmate-api-dev.azurewebsites.net'
-  REACT_APP_API_BASE_URL: '=/metricmate/mm-webapi/v0'
+  REACT_APP_API_BASE_URL: '/metricmate/mm-webapi/v0'
   REACT_APP_API_KEY_FIREBASE_: ${{secrets.REACT_APP_API_KEY_FIREBASE_}}
   REACT_APP_API_FIREBASE_DOMAIN: ${{secrets.REACT_APP_API_FIREBASE_DOMAIN}}
   REACT_APP_API_FIREBASE_DB_URL: ${{secrets.REACT_APP_API_FIREBASE_DB_URL}}
