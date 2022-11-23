@@ -1,5 +1,5 @@
 // metric mate logo
-export const metricMateLogo = 'https://images.squarespace-cdn.com/content/v1/5bc8f3f8d7819e6340e76db5/fa30749f-22c6-4f9a-8a1d-b4bdf4667386/MM+Logo+circle+R.png?format=1500w'
+export const metricMateLogo = 'https://images.squarespace-cdn.com/content/v1/63319bd10d9101340ae0c092/993171cf-ec31-4bd2-ad0a-a65d076249f5/MetricMateLogo_BlackandRed_1024x1024.png?format=150w'
 
 // google
 export const googleClientId = '440099640789-7u5p0ei2u3hbho0jfdnietfufe3adm53.apps.googleusercontent.com';

@@ -10,7 +10,7 @@ export type Athlete = {
      */
     athleteId: number;
     /**
-     * Gets or Sets User
+     * Gets or Sets UserId of the Athlete
      */
     userId: number;
     /**
@@ -18,9 +18,21 @@ export type Athlete = {
      */
     leadTrainerId: number;
     /**
+     * Gets or Sets LastWorkoutDateTime
+     */
+    lastWorkoutDateTime?: string | null;
+    /**
      * Gets or Sets FitnessGoal
      */
     fitnessGoal: string;
+    /**
+     * Gets or Sets PowerLevel
+     */
+    powerLevel?: number | null;
+    /**
+     * Gets or Sets NickName
+     */
+    nickname?: string | null;
     /**
      * Gets or Sets Trainers
      */

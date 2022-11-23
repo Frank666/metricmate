@@ -1,11 +1,16 @@
-import React from "react";
-import styled from "@emotion/styled";
+import {
+    Box,
+    Container,
+    Grid,
+    Typography,
+} from "@mui/material";
+import {
+    motion
+} from "framer-motion";
 import Copyright from '../components/login/copyright';
 import Logo from "../components/login/logo";
 import SocialAuth from "../components/login/socialAuth";
-import { Container, Typography, Box } from "@mui/material";
-import { motion } from "framer-motion";
-
+import styled from "@emotion/styled";
 
 const RootStyle = styled("div")({
     background: "rgb(249, 250, 251)",
@@ -16,16 +21,6 @@ const RootStyle = styled("div")({
 
 const HeadingStyle = styled(Box)({
     textAlign: "center",
-});
-
-const ContentStyle = styled("div")({
-    maxWidth: 480,
-    padding: 25,
-    margin: "auto",
-    display: "flex",
-    justifyContent: "center",
-    flexDirection: "column",
-    background: "#fff",
 });
 
 let easing = [0.6, -0.05, 0.01, 0.99];
@@ -48,23 +43,64 @@ const fadeInUp = {
 function Login() {
     return (
         <RootStyle>
-            <Container maxWidth="sm">
-                <ContentStyle>
-                    <HeadingStyle component={motion.div} {...fadeInUp}>
-                        <Logo />
-                        <Typography sx={{ color: "text.secondary", mb: 5 }}>
-                            Login to your account
-                        </Typography>
-                    </HeadingStyle>
+            <Container maxWidth="lg" >
+                <Grid
+                    container
+                    columns={{ xs: 4, md: 12 }}
+                    sx={{
+                        minHeight: '60vh',
+                        maxWidth: '100%',
+                        display: 'flex',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <Grid item xs={5} sx={{
+                        justifyContent: 'center',
 
-                    <Box component={motion.div} {...fadeInUp}>
-                        <SocialAuth />
-                    </Box>
+                    }}>
+                        <HeadingStyle component={motion.div} {...fadeInUp}>
+                            <Logo />
+                            <Typography sx={{ fontWeight: 'bold', fontSize: '28px' }} gutterBottom>
+                                Sign in to your Account
+                            </Typography>
+                        </HeadingStyle>
 
-                    <Copyright sx={{ mt: 8, mb: 4 }} />
-                </ContentStyle>
+                        <Box component={motion.div} {...fadeInUp}>
+                            <SocialAuth />
+                        </Box>
+                        <Copyright sx={{ mt: 8, mb: 4 }} />
+                    </Grid>
+                    <Grid
+                        item xs={7}
+                        display={{
+                            xs: "none",
+                            md: "flex",
+                            lg: 'flex'
+                        }}
+                    >
+                        <Box
+                            component={motion.div} {...fadeInUp}
+                            sx={{
+                                backgroundColor: 'black',
+                                display: 'flex',
+                                justifyContent: 'center',
+
+                            }}
+                        >
+                            <img
+                                style={{
+                                    alignSelf: 'center'
+                                }}
+                                alt='metricmate'
+                                src={window.location.origin + '/images/group.png'}
+                            />
+                        </Box>
+
+                    </Grid>
+                </Grid>
 
             </Container>
+
         </RootStyle>
     );
 };

@@ -1,35 +1,37 @@
 /* istanbul ignore file */
 /* tslint:disable */
 /* eslint-disable */
-import type { Exercise } from '../models/Exercise';
-import type { ExerciseSet } from '../models/ExerciseSet';
+import type { Program } from '../models/Program';
 
 import type { CancelablePromise } from '../core/CancelablePromise';
 import { OpenAPI } from '../core/OpenAPI';
 import { request as __request } from '../core/request';
 
-export class ExerciseSetsService {
+export class ProgramsService {
 
     /**
-     * Returns all exercise sets
+     * Retrieves specific workout program using the program's property values (using the "Get" pattern).
      * @param offset The number of items to skip before starting to collect the result set
      * @param limit The number of items to return
-     * @param exercise The exercise to which the set belongs.
-     * @returns ExerciseSet The requested resource was successfully retrieved.
+     * @param name 
+     * @param isActive Whether the program is active
+     * @returns Program The requested resource was successfully retrieved.
      * @throws ApiError
      */
-    public static getExerciseSets(
+    public static getPrograms(
 offset?: number,
 limit?: number,
-exercise?: Exercise,
-): CancelablePromise<Array<ExerciseSet>> {
+name?: string,
+isActive?: boolean,
+): CancelablePromise<Array<Program>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/exerciseSets',
+            url: '/programs',
             query: {
                 'offset': offset,
                 'limit': limit,
-                'exercise': exercise,
+                'name': name,
+                'isActive': isActive,
             },
             errors: {
                 400: `Bad Request`,
@@ -42,17 +44,17 @@ exercise?: Exercise,
     }
 
     /**
-     * Add a new exercise set
+     * Add a new program
      * @param requestBody 
      * @returns any Updated. The resource was updated.
      * @throws ApiError
      */
-    public static postExerciseSets(
-requestBody: ExerciseSet,
+    public static postPrograms(
+requestBody: Program,
 ): CancelablePromise<any> {
         return __request(OpenAPI, {
             method: 'POST',
-            url: '/exerciseSets',
+            url: '/programs',
             body: requestBody,
             mediaType: 'application/json',
             errors: {
@@ -67,24 +69,19 @@ requestBody: ExerciseSet,
     }
 
     /**
-     * Get an exercise by ID
-     * @param exerciseSetId An identifier that uniquely identifies the exercise set.
-     * @param ifMatch The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
-     * @returns ExerciseSet The requested resource was successfully retrieved.
+     * Returns a program by ID.
+     * @param programId An identifier that uniquely identifies the program.
+     * @returns Program The requested resource was successfully retrieved.
      * @throws ApiError
      */
-    public static getExerciseSets1(
-exerciseSetId: number,
-ifMatch?: string,
-): CancelablePromise<ExerciseSet> {
+    public static getPrograms1(
+programId: string,
+): CancelablePromise<Program> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/exerciseSets/{exerciseSetId}',
+            url: '/programs/{programId}',
             path: {
-                'exerciseSetId': exerciseSetId,
-            },
-            headers: {
-                'If-Match': ifMatch,
+                'programId': programId,
             },
             errors: {
                 400: `Bad Request`,
@@ -97,23 +94,23 @@ ifMatch?: string,
     }
 
     /**
-     * Updates a exercise set based on the identifier
-     * @param exerciseSetId An identifier that uniquely identifies the exercise set.
+     * Updates a program based on the identifier
+     * @param programId An identifier that uniquely identifies the program.
      * @param requestBody 
      * @param ifMatch The ETag header value used to prevent the PUT from updating a resource modified by another consumer.
      * @returns void 
      * @throws ApiError
      */
-    public static putExerciseSets(
-exerciseSetId: number,
-requestBody: ExerciseSet,
+    public static putPrograms(
+programId: string,
+requestBody: Program,
 ifMatch?: string,
 ): CancelablePromise<void> {
         return __request(OpenAPI, {
             method: 'PUT',
-            url: '/exerciseSets/{exerciseSetId}',
+            url: '/programs/{programId}',
             path: {
-                'exerciseSetId': exerciseSetId,
+                'programId': programId,
             },
             headers: {
                 'If-Match': ifMatch,
@@ -132,21 +129,21 @@ ifMatch?: string,
     }
 
     /**
-     * Delete an existing exercise set using the identifier
-     * @param exerciseSetId An identifier that uniquely identifies the exercise set.
+     * Delete an existing program using the identifier
+     * @param programId An identifier that uniquely identifies the program.
      * @param ifMatch The ETag header value used to prevent the DELETE from removing a resource modified by another consumer.
      * @returns void 
      * @throws ApiError
      */
-    public static deleteExerciseSets(
-exerciseSetId: number,
+    public static deletePrograms(
+programId: string,
 ifMatch?: string,
 ): CancelablePromise<void> {
         return __request(OpenAPI, {
             method: 'DELETE',
-            url: '/exerciseSets/{exerciseSetId}',
+            url: '/programs/{programId}',
             path: {
-                'exerciseSetId': exerciseSetId,
+                'programId': programId,
             },
             headers: {
                 'If-Match': ifMatch,

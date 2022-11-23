@@ -3,7 +3,6 @@
 /* eslint-disable */
 
 import type { Athlete } from './Athlete';
-import type { User } from './User';
 
 export type Trainer = {
     /**
@@ -14,7 +13,10 @@ export type Trainer = {
      * Gets or Sets BusinessName
      */
     businessName?: string | null;
-    user?: User;
+    /**
+     * Gets or Sets UserId of the Trainer
+     */
+    userId: number;
     /**
      * Gets or Sets Athletes
      */

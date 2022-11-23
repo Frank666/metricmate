@@ -72,7 +72,7 @@ trainerId: number,
      * @throws ApiError
      */
     public static getTrainers1(
-userId: string,
+userId: number,
 ifMatch?: string,
 ): CancelablePromise<User> {
         return __request(OpenAPI, {

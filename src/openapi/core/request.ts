@@ -318,10 +318,8 @@ export const request = <T>(config: OpenAPIConfig, options: ApiRequestOptions): C
                 };                
 
                 catchErrorCodes(options, result);
-
                 resolve(result.body);
 
-                console.log(AuthManager.getInstance().getIsValid())
                 if (!AuthManager.getInstance().getIsValid() && url === '/refreshToken') {
                     const authResult: AuthenticationResult = response.data;
                     AuthManager.getInstance().setIsValid(true);

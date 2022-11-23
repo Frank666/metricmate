@@ -41,18 +41,29 @@ const useStyles = makeStyles((theme: Theme) =>
             paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
             transition: theme.transitions.create('width'),
             width: '100%',
+            border: 'gray',
+            borderStyle: 'groove',
+            borderRadius: '5px',
+            opacity: '.2',
             [theme.breakpoints.up('sm')]: {
-                width: '12ch',
+                width: '35ch',
                 '&:focus': {
-                    width: '20ch',
+                    width: '115ch',
+                    opacity: '1.2',
                 },
             },
         },
     })
 );
 
-export default function Search() {
+interface AthletesInfo {
+    searchAthlete: Function;
+}
+
+export default function Search(props: AthletesInfo) {
+    const { searchAthlete } = props;
     const classes = useStyles();
+
     return (
         <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -65,6 +76,7 @@ export default function Search() {
                     input: classes.inputInput,
                 }}
                 inputProps={{ 'aria-label': 'search ' }}
+                onChange={(e) => { searchAthlete(e.target.value) }}
             />
         </div>
     );

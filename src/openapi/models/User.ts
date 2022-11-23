@@ -18,4 +18,8 @@ export type User = {
      */
     email: string;
     role?: Role;
+    /**
+     * Gets or Sets TrainerId
+     */
+    trainerId: number;
 };

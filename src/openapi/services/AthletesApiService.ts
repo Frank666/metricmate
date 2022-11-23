@@ -115,19 +115,19 @@ trainerId: number,
     }
 
     /**
-     * Returns all athlete Assigned Workouts
+     * Returns all the provided athlete's Assigned Workouts
      * @param athleteId 
      * @param trainerId 
      * @returns Workout The requested resource was successfully retrieved.
      * @throws ApiError
      */
-    public static getAthletesAssignedWorkouts(
+    public static getAthleteAssignedWorkouts(
 athleteId: number,
 trainerId: number,
 ): CancelablePromise<Array<Workout>> {
         return __request(OpenAPI, {
             method: 'GET',
-            url: '/athletesAssignedWorkouts',
+            url: '/athleteAssignedWorkouts',
             query: {
                 'athleteId': athleteId,
                 'trainerId': trainerId,
