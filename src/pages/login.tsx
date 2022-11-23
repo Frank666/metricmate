@@ -4,9 +4,9 @@ import {
     Grid,
     Typography,
 } from "@mui/material";
-import {
-    motion
-} from "framer-motion";
+// import {
+//     motion
+// } from "framer-motion";
 import Copyright from '../components/login/copyright';
 import Logo from "../components/login/logo";
 import SocialAuth from "../components/login/socialAuth";
@@ -58,14 +58,14 @@ function Login() {
                         justifyContent: 'center',
 
                     }}>
-                        <HeadingStyle component={motion.div} {...fadeInUp}>
+                        <HeadingStyle >
                             <Logo />
                             <Typography sx={{ fontWeight: 'bold', fontSize: '28px' }} gutterBottom>
                                 Sign in to your Account
                             </Typography>
                         </HeadingStyle>
 
-                        <Box component={motion.div} {...fadeInUp}>
+                        <Box >
                             <SocialAuth />
                         </Box>
                         <Copyright sx={{ mt: 8, mb: 4 }} />
@@ -79,7 +79,6 @@ function Login() {
                         }}
                     >
                         <Box
-                            component={motion.div} {...fadeInUp}
                             sx={{
                                 backgroundColor: 'black',
                                 display: 'flex',
