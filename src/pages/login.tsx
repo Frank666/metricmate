@@ -4,9 +4,9 @@ import {
     Grid,
     Typography,
 } from "@mui/material";
-// import {
-//     motion
-// } from "framer-motion";
+import {
+    motion
+} from "framer-motion";
 import Copyright from '../components/login/copyright';
 import Logo from "../components/login/logo";
 import SocialAuth from "../components/login/socialAuth";
@@ -23,22 +23,22 @@ const HeadingStyle = styled(Box)({
     textAlign: "center",
 });
 
-//let easing = [0.6, -0.05, 0.01, 0.99];
-// const fadeInUp = {
-//     initial: {
-//         y: 60,
-//         opacity: 0,
-//         transition: { duration: 0.6, ease: easing },
-//     },
-//     animate: {
-//         y: 0,
-//         opacity: 1,
-//         transition: {
-//             duration: 0.6,
-//             ease: easing,
-//         },
-//     },
-// };
+let easing = [0.6, -0.05, 0.01, 0.99];
+const fadeInUp = {
+    initial: {
+        y: 60,
+        opacity: 0,
+        transition: { duration: 0.6, ease: easing },
+    },
+    animate: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.6,
+            ease: easing,
+        },
+    },
+};
 
 function Login() {
     return (
@@ -58,14 +58,14 @@ function Login() {
                         justifyContent: 'center',
 
                     }}>
-                        <HeadingStyle >
+                        <HeadingStyle component={motion.div} {...fadeInUp}>
                             <Logo />
                             <Typography sx={{ fontWeight: 'bold', fontSize: '28px' }} gutterBottom>
                                 Sign in to your Account
                             </Typography>
                         </HeadingStyle>
 
-                        <Box >
+                        <Box component={motion.div} {...fadeInUp}>
                             <SocialAuth />
                         </Box>
                         <Copyright sx={{ mt: 8, mb: 4 }} />
@@ -79,6 +79,7 @@ function Login() {
                         }}
                     >
                         <Box
+                            component={motion.div} {...fadeInUp}
                             sx={{
                                 backgroundColor: 'black',
                                 display: 'flex',

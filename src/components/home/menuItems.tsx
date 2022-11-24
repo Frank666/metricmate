@@ -50,7 +50,7 @@ export default function MenuListItems() {
                     <ListItemText primary="Clients" />
                 </ListItemButton>
             </Link>
-            <Link to="/dashboard" >
+            <Link to="/workouts" >
                 <ListItemButton>
                     <ListItemIcon >
                         <FitnessCenterIcon />

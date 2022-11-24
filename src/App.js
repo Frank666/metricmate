@@ -7,6 +7,7 @@ import Dashboard from './pages/dashboard'
 import Clients from './pages/clients'
 import Home from './pages/home'
 import WorkoutsHistory from './pages/workoutsHistory';
+import Workouts from './pages/workouts';
 import "./App.css";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
                         <Route path="dashboard" element={<Dashboard />} />
                         <Route path="clients" element={<Clients />} />
                         <Route path="workouts-history" element={<WorkoutsHistory />} />
+                        <Route path="workouts" element={<Workouts />} />
                     </Route>
                 </Routes>
             </UserContext.Provider>

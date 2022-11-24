@@ -1,5 +1,4 @@
 import React from 'react';
-//import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@mui/material/Pagination';
 
 interface PaginatorProps {
@@ -8,34 +7,26 @@ interface PaginatorProps {
     currentPage: number;
 }
 
-// const useStyles = makeStyles((theme) => ({
-//     root: {
-//         '& > *': {
-//             marginTop: theme.spacing(2),
-//         },
-//     },
-//     pagination: {
-//         display: 'flex',
-//         justifyContent: 'center',
-//     },
-// }));
 
 const Paginator = (props: PaginatorProps) => {
     const { pageCount, onPageChange, currentPage } = props;
 
     return (
-        <div>
+        <>
             <Pagination
                 count={pageCount}
                 onChange={onPageChange}
                 page={currentPage}
                 color="primary"
-                //className={classes.pagination}
                 showFirstButton
                 showLastButton
                 shape="rounded"
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center'
+                }}
             />
-        </div>
+        </>
     );
 };
 
